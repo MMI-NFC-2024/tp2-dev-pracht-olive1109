@@ -1,0 +1,27 @@
+---
+import PlotFigure from "../../components/PlotFigure.astro";
+import penguins from '../../assets/penguins.json';
+import * as Plot from "@observablehq/plot";
+
+const penguinsGentoo = penguins.filter(({ species }) => species === "Gentoo");
+---
+
+<h1>Manchots Gentoo</h1>
+<nav>
+  <a href="/species/Adelie">Adelie</a> |
+  <a href="/species/Gentoo">Gentoo</a> |
+  <a href="/species/Chinstrap">Chinstrap</a>
+</nav>
+
+<p>Nombre d'individus : {penguinsGentoo.length}</p>
+
+<PlotFigure
+    options={{
+      marks: [
+        Plot.barY(penguinsGentoo, {
+          x: "sex",
+          y: "body_mass_g",
+        }),
+      ],
+    }}
+/>
