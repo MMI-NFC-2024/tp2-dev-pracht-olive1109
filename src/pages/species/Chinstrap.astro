@@ -2,23 +2,22 @@
 import PlotFigure from "../../components/PlotFigure.astro";
 import penguins from '../../assets/penguins.json';
 import * as Plot from "@observablehq/plot";
-
-const penguinsGentoo = penguins.filter(({ species }) => species === "Gentoo");
+const penguinsChinstrap = penguins.filter(({species}) => species === "Chinstrap");
 ---
 
-<h1>Manchots Gentoo</h1>
+<h1>Manchots Chinstrap</h1>
 <nav>
   <a href="/species/Adelie">Adelie</a> |
   <a href="/species/Gentoo">Gentoo</a> |
   <a href="/species/Chinstrap">Chinstrap</a>
 </nav>
 
-<p>Nombre d'individus : {penguinsGentoo.length}</p>
+<p>Nombre d'individus : {penguinsChinstrap.length}</p>
 
 <PlotFigure
     options={{
       marks: [
-        Plot.barY(penguinsGentoo, {
+        Plot.barY(penguinsChinstrap, {
           x: "sex",
           y: "body_mass_g",
           stroke: "species",
