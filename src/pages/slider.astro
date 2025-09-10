@@ -1,0 +1,49 @@
+---
+import GraphicSpecies from "../components/GraphicSpecies.astro";
+---
+
+<h1>Comparaison des especes de manchots</h1>
+
+<nav>
+    <a href="/test-iframe">Visualisation par IFRAME</a> |
+    <a href="/">Home</a>
+</nav>
+
+<div >
+    <nav>
+        <a href="#Adelie">Adelie</a> |
+        <a href="#Gentoo">Gentoo</a> |
+        <a href="#Chinstrap">Chinstrap</a>
+    </nav>
+    <div class="slider">
+        <section id="Adelie">
+        <h2>Adelie</h2>
+        <GraphicSpecies species="Adelie" />
+    </section>
+    <section id="Gentoo">
+        <h2>Gentoo</h2>
+        <GraphicSpecies species="Gentoo" />
+    </section>
+    <section id="Chinstrap">
+        <h2>Chinstrap</h2>
+        <GraphicSpecies species="Chinstrap" />
+    </section>
+    </div>
+</div>
+
+
+<style>
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 39%;
+}
+.slider section {
+  min-width: 400px;
+  flex: 0 0 auto;
+  scroll-margin-left: 2rem;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+</style>
